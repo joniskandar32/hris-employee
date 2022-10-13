@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-item lines="none" *ngFor="let item of listsNote;">
+    <ion-avatar slot="start">
+      <img src="https://hris.ntc.co.id/ntc/hrm/cdn/images/{{ item.pict }}">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{ item.first_name }}</h3>
+      <p>{{ item.id_employee }} - {{ item.dept_slug }}</p>
+    </ion-label>
+  </ion-item>
+</ion-header>
+<ion-content class="main-content">
+
+  <center>
+    <img src="https://ntc.co.id/download/HRIS-Slider1.png" style="padding: 0px;">
+  </center>
+
+  <!--<ion-list>
+    <ion-list-header>-->
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p align="left">Happy Birthday</p>
+          </ion-col>
+          <ion-col>
+            <p align="right"><ion-icon name="chevron-back-outline"></ion-icon><ion-icon name="chevron-forward-outline"></ion-icon></p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    <!--</ion-list-header>-->
+
+    <ion-slides [options]="slideOpt">
+
+      <ion-slide *ngFor="let item3 of listsNote3;">
+        <ion-card class="sudut">
+        <ion-card-header>
+          <img src="https://hris.ntc.co.id/ntc/hrm/cdn/images/{{item3.pict}}" width="50%" height="50%" style="border-radius: 10px;">
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{item3.first_name}}<br>{{item3.dept_slug}}
+        </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  <!--</ion-list>-->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p align="left">My Leave Permit</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Propose <br>(New)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{listsNote5}} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="permitPropose()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Posted <br>(Approve)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{listsNote4}} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="permitPosted()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p align="left">My Overtime</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Propose <br>(New)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{ ot }} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="otPropose()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Posted <br>(Approve)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{ listsNote1 }} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="otPosted()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p align="left">My Claim</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Propose <br>(New)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{listsNote8}} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="claimPropose()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col>
+        <ion-card class="sudut">
+          <ion-card-header>
+            <ion-card-subtitle><center>Posted <br>(Approve)</center></ion-card-subtitle>
+            <ion-card-title><center>( {{listsNote9}} )</center></ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-button expand="block" (click)="claimPosted()"><ion-icon name="chevron-forward-outline"></ion-icon> View</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

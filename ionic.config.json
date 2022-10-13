@@ -1,0 +1,10 @@
+{
+  "name": "hris-employee",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

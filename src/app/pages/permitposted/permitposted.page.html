@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="View Posted Permit" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar color="default" placeholder="Search Permit ID..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" fullscreen>
+  <center>
+    <img src="https://ntc.co.id/download/HRIS-Slider1.png" style="padding: 0px;">
+  </center>
+
+  <ion-list *ngFor="let item of listsNote | filter:filterTerm;let i = index">
+    <ion-list-header style="background-color: #5A5A5A;">
+      ID Register : {{item.leave_regis}}
+    </ion-list-header>
+    <ion-item>
+      <ion-note slot="start">Date</ion-note>
+      <ion-note slot="end">{{item.start_leave}} s/d {{item.back_work}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-note slot="start">Leave Type</ion-note>
+      <ion-note slot="end">{{item.attendance_code}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-note slot="start">Description</ion-note>
+      <ion-note slot="end">{{item.desc_leave}}</ion-note>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

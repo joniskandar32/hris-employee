@@ -1,0 +1,15 @@
+ion-content{
+    --background: #fff url('../../assets/bg-login2.jpg') no-repeat center center / cover;
+    //--background: #1E1E1E no-repeat center center / cover;
+}
+
+ion-footer {
+    &.footer-md::before {
+        background-image: none;
+    }
+}
+
+.bg-transparent {
+    background: transparent;
+  }
+  

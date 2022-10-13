@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Personal Information" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content ion-padding *ngFor="let item of listsNote;">
+  <ion-card class="sudut">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="https://hris.ntc.co.id/ntc/hrm/cdn/images/{{ item.pict }}">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{ item.first_name }}</h3>
+      <p>{{ item.id_employee }} - {{ item.dept_slug }}</p>
+    </ion-label>
+  </ion-item>
+  </ion-card>
+
+<ion-card class="sudut">
+  <ion-list>
+    <ion-item lines="full">
+      <ion-label position="floating">
+        <h3>Full Name</h3>
+      </ion-label>
+      <ion-input placeholder="Full Name" name="first_name" value="{{ item.first_name }}"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">
+        <h3>Address</h3>
+      </ion-label>
+      <ion-input placeholder="Address" name="place" value="{{ item.address }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date of Birth</ion-label>
+      <ion-input
+        value="{{ date | date: 'yyyy-MM-dd' }}"
+        id="date"
+        class="ion-text-end"
+      ></ion-input>
+      <ion-popover trigger="date" size="cover">
+        <ng-template>
+          <ion-datetime
+            presentation="date"
+            [(ngModel)]="date"
+            locale="sl-SI"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">
+        <h3>Sex</h3>
+      </ion-label>
+      <ion-input type="number" placeholder="Date of Birth" name="hp" value="{{ item.hp }}"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">
+        <h3>Mobile No.</h3>
+      </ion-label>
+      <ion-input type="number" placeholder="Date of Birth" name="hp" value="{{ item.hp }}"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">
+        <h3>Email (E-Slip)</h3>
+      </ion-label>
+      <ion-input type="email" placeholder="Email" name="email" value="{{ item.email_slip }}"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  </ion-card>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block"><ion-icon name="checkmark-circle-outline"></ion-icon> &nbsp;Update</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

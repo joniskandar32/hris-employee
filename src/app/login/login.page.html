@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <br>
+  <center>
+    <img src="../../assets/logo_web.png" width="150px" style="padding: 5px; border-radius: 15px;">
+  </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+
+    <ion-item color="none" lines="full">
+      <ion-label position="floating"><ion-icon name="person-outline"></ion-icon> Username</ion-label>
+      <ion-input formControlName="username" [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.required">
+      Username is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.username.errors?.minlength">
+      Username should be min 2 chars long.
+    </span>
+
+
+    <ion-item color="none" lines="full">
+      <ion-label position="floating"><ion-icon name="key-outline"></ion-icon> Password</ion-label>
+      <ion-input formControlName="password" [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+      Password is required.
+    </span>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block"><ion-icon name="log-in-outline"></ion-icon> &nbsp;Login</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <p style="position: bottom;"><center>App version 1.0</center></p>
+
+  <!--<ion-button color="danger" expand="block" (click)="setData()">Set Data</ion-button>
+
+  <ion-button color="success" expand="block" (click)="getData()">Get Data</ion-button>
+
+  <ion-button color="tertiary" expand="block" (click)="getAllData()">Get All Data</ion-button>
+
+  <ion-button color="warning" expand="block" (click)="removeData()">Remove Key</ion-button>
+
+  <ion-button color="dark" expand="block" (click)="clearData()">Clear</ion-button>-->
+</ion-content>
+
